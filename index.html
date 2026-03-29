@@ -429,12 +429,12 @@ select:focus {
 <header>
   <h1><i class="fas fa-head-side-virus"></i> AudioFiel</h1>
   <div class="subtitle">Tu lector de texto de confianza</div>
-  <div class="brand-line"><i class="fas fa-check-circle"></i> Ignora #* ... *# · Siempre fiel</div>
+  <div class="brand-line"><i class="fas fa-check-circle"></i> Ignora #* ... *# y ##** · Siempre fiel</div>
 </header>
 <main>
 <div class="card">
   <h2><i class="fas fa-pen-fancy"></i> Texto a narrar</h2>
-  <textarea id="textInput" placeholder="Pega aquí el texto que deseas escuchar... (máx 8.000 caracteres)&#10;&#10;Nota: El lector IGNORA automáticamente todo lo que esté entre #* y *#"></textarea>
+  <textarea id="textInput" placeholder="Pega aquí el texto que deseas escuchar... (máx 8.000 caracteres)&#10;&#10;Nota: El lector IGNORA automáticamente todo lo que esté entre #* y *# o entre ##** y **##"></textarea>
   <div class="char-counter">
     <div class="char-info"><i class="fas fa-solid fa-layer-group"></i> Contenido cargado</div>
     <div class="char-limit" id="charLimit">0 / 8.000</div>
@@ -467,12 +467,12 @@ select:focus {
     </div>
   </div>
   
-  <div class="status" id="status">🎧 Sistema listo · Ignora #* ... *#</div>
+  <div class="status" id="status">🎧 Sistema listo · Ignora #*...*# y ##**...**##</div>
 </div>
 
 <div class="instructions">
   <p><i class="fas fa-shield-alt"></i> <strong>AudioFiel</strong> no almacena datos personales. Todo el procesamiento ocurre en tu dispositivo.</p>
-  <p><i class="fas fa-eye-slash"></i> <strong>Ignora automáticamente</strong> cualquier texto entre <strong>#*</strong> y <strong>*#</strong> (no se escuchará).</p>
+  <p><i class="fas fa-eye-slash"></i> <strong>Ignora automáticamente</strong> cualquier texto entre <strong>#*</strong> y <strong>*#</strong> o entre <strong>##**</strong> y <strong>**##</strong> (no se escuchará).</p>
   <p><i class="fas fa-clock"></i> Usa PLAY y bloquea la pantalla: la voz sigue (desde favoritos de Safari).</p>
   <p><i class="fas fa-gavel"></i> Este software se proporciona "tal cual", sin garantías. El usuario asume toda responsabilidad.</p>
 </div>
@@ -498,17 +498,47 @@ select:focus {
     let pau = false;      // paused
     let ss = window.speechSynthesis;
     let currentUtterance = null;
-
-    // ========== FUNCIÓN PARA LIMPIAR MARCAS #* ... *# ==========
-    // Elimina TODO el texto que esté entre #* y *# (incluyendo las marcas)
-    // También elimina #* sueltos que no tengan cierre
-    function limpiarMarcas(texto) {
-        // Elimina todo lo que esté entre #* y *# (inclusive)
-        // El patrón: #* (cualquier carácter, incluso saltos de línea, de forma no codiciosa) *#
-        let limpio = texto.replace(/#\*[\s\S]*?\*#/g, '');
+    
+    // ========== AUDIO FANTASMA Y WAKE LOCK PARA PANTALLA BLOQUEADA ==========
+    let ghostAudio = null;
+    let wakeLock = null;
+    
+    function mantenerActivoMientrasNarra(iniciar) {
+        if (iniciar && spk && !ghostAudio) {
+            try {
+                // Audio silencioso en bucle para mantener vivo el navegador
+                ghostAudio = new Audio('data:audio/mp3;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf//7wz9hAAAABQAAABpDRE1FAAAAYWRpYWxfaW5fYnVpbGRpbmdfMTI2LnR4dA==');
+                ghostAudio.loop = true;
+                ghostAudio.volume = 0;
+                ghostAudio.play().catch(e => console.log('audio fantasma:', e));
+            } catch(e) {}
+        } else if (!iniciar && ghostAudio) {
+            ghostAudio.pause();
+            ghostAudio = null;
+        }
         
-        // Por si quedan #* sueltos sin cierre, los eliminamos también
+        // WakeLock para evitar que la pantalla se apague automáticamente
+        if (iniciar && 'wakeLock' in navigator && !wakeLock) {
+            navigator.wakeLock.request('screen').then(lock => wakeLock = lock).catch(e=>{});
+        } else if (!iniciar && wakeLock) {
+            wakeLock.release().catch(e=>{});
+            wakeLock = null;
+        }
+    }
+
+    // ========== FUNCIÓN PARA LIMPIAR MARCAS #* ... *# y ##** ... **## ==========
+    function limpiarMarcas(texto) {
+        // 1. Eliminar ##** ... **## (el nuevo formato)
+        let limpio = texto.replace(/##\*\*[\s\S]*?\*\*##/g, '');
+        
+        // 2. Eliminar #* ... *# (el formato original)
+        limpio = limpio.replace(/#\*[\s\S]*?\*#/g, '');
+        
+        // 3. Eliminar marcadores sueltos (sin cierre)
         limpio = limpio.replace(/#\*/g, '');
+        limpio = limpio.replace(/##\*\*/g, '');
+        limpio = limpio.replace(/\*\*##/g, '');
+        limpio = limpio.replace(/\*#/g, '');
         
         // Limpiar espacios múltiples que puedan quedar
         limpio = limpio.replace(/\s+/g, ' ').trim();
@@ -574,7 +604,7 @@ select:focus {
             v.appendChild(o);
         });
         
-        upSt(`✅ ${fv.length} voces disponibles · Ignora #*...*#`);
+        upSt(`✅ ${fv.length} voces disponibles · Ignora #*...*# y ##**...**##`);
     }
 
     if (ss.onvoiceschanged !== undefined) {
@@ -611,7 +641,7 @@ select:focus {
         // Mostrar en consola cuántos caracteres se eliminaron (opcional, para debug)
         const eliminados = textoOriginal.length - textoLimpio.length;
         if (eliminados > 0) {
-            console.log(`🗑️ Marcas #*...*# eliminadas: ${eliminados} caracteres omitidos`);
+            console.log(`🗑️ Marcas #*...*# o ##**...**## eliminadas: ${eliminados} caracteres omitidos`);
         }
         
         return textoLimpio;
@@ -634,11 +664,11 @@ select:focus {
             return;
         }
         
-        // === IMPORTANTE: Limpiamos las marcas #* ... *# ===
+        // === IMPORTANTE: Limpiamos las marcas #* ... *# y ##** ... **## ===
         const textoParaNarrar = obtenerTextoParaNarrar();
         
         if (!textoParaNarrar) {
-            upSt("⚠️ El texto solo contiene marcas #*...*# (nada que narrar)");
+            upSt("⚠️ El texto solo contiene marcas (nada que narrar)");
             return;
         }
         
@@ -660,13 +690,15 @@ select:focus {
         u.onstart = () => {
             spk = true;
             pau = false;
+            mantenerActivoMientrasNarra(true);  // Activar audio fantasma y wake lock
             upBtn();
-            upSt(`🎙️ Narrando (sin marcas #*...*#)`);
+            upSt(`🎙️ Narrando (sin marcas)`);
             st.classList.add('active');
             st.classList.remove('paused');
         };
         
         u.onend = () => {
+            mantenerActivoMientrasNarra(false);  // Desactivar
             spk = false;
             pau = false;
             upBtn();
@@ -676,6 +708,7 @@ select:focus {
         };
         
         u.onerror = () => {
+            mantenerActivoMientrasNarra(false);  // Desactivar en caso de error
             spk = false;
             pau = false;
             upBtn();
@@ -725,6 +758,7 @@ select:focus {
 
     function stop() {
         if (ss.speaking || ss.pending) {
+            mantenerActivoMientrasNarra(false);  // Asegurar desactivación
             ss.cancel();
             spk = false;
             pau = false;
@@ -786,7 +820,7 @@ select:focus {
     // Inicialización
     upCh();
     upBtn();
-    upSt("🎧 Sistema listo · Ignora #* ... *#");
+    upSt("🎧 Sistema listo · Ignora #*...*# y ##**...**##");
     t.focus();
 })();
 </script>
