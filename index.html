@@ -17,410 +17,123 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* ========== DISEÑO AUDIOFIEL - MODERNO, ELEGANTE, CONFIABLE ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(145deg, #0b0f17 0%, #1a1f2f 100%);
-  color: #f0f3fa;
-  min-height: 100vh;
-  padding: 20px 16px 40px;
-  position: relative;
-  overflow-x: hidden;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:linear-gradient(145deg,#0b0f17 0%,#1a1f2f 100%);
+  color:#f0f3fa; min-height:100vh; padding:20px 16px 40px;
+  position:relative; overflow-x:hidden;
 }
-
 body::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at 30% 30%, rgba(0, 180, 255, 0.08) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
+  content:''; position:fixed; top:-50%; left:-20%; width:140%; height:140%;
+  background:radial-gradient(circle at 30% 30%,rgba(0,180,255,.08) 0%,transparent 60%);
+  pointer-events:none; z-index:0;
 }
-
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 28px;
-  padding-top: 12px;
-}
-
+.container { max-width:700px; margin:0 auto; position:relative; z-index:2; }
+header { text-align:center; margin-bottom:28px; padding-top:12px; }
 h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  background: linear-gradient(145deg, #ffffff 0%, #b0d0ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 6px;
-  text-shadow: 0 0 30px rgba(70, 130, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  font-size:2.4rem; font-weight:700; letter-spacing:-.02em;
+  background:linear-gradient(145deg,#fff 0%,#b0d0ff 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  margin-bottom:6px; display:flex; align-items:center; justify-content:center; gap:10px;
 }
-
-h1 i {
-  background: linear-gradient(145deg, #4a80ff, #9f7aea);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 2rem;
-}
-
-.subtitle {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #9bb3d0;
-  letter-spacing: 0.3px;
-  margin-bottom: 8px;
-}
-
+h1 i { background:linear-gradient(145deg,#4a80ff,#9f7aea); -webkit-background-clip:text; background-clip:text; color:transparent; font-size:2rem; }
+.subtitle { font-size:1rem; font-weight:400; color:#9bb3d0; letter-spacing:.3px; margin-bottom:8px; }
 .brand-line {
-  display: inline-block;
-  padding: 6px 18px;
-  background: rgba(74, 128, 255, 0.12);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(74, 128, 255, 0.25);
-  border-radius: 40px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #aac8ff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display:inline-block; padding:6px 18px;
+  background:rgba(74,128,255,.12); backdrop-filter:blur(4px);
+  border:1px solid rgba(74,128,255,.25); border-radius:40px;
+  font-size:.85rem; font-weight:500; color:#aac8ff; box-shadow:0 4px 12px rgba(0,0,0,.2);
 }
-
 .card {
-  background: rgba(20, 28, 45, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 36px;
-  padding: 28px 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  background:rgba(20,28,45,.7); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.06); border-radius:36px; padding:28px 24px; margin-bottom:24px;
+  box-shadow:0 25px 45px -10px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.03);
 }
-
-h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #d0e0ff;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  letter-spacing: -0.2px;
-}
-
-h2 i {
-  color: #4a80ff;
-  font-size: 1.4rem;
-  width: 32px;
-  text-align: center;
-}
-
+h2 { font-size:1.25rem; font-weight:600; margin-bottom:20px; color:#d0e0ff; display:flex; align-items:center; gap:12px; letter-spacing:-.2px; }
+h2 i { color:#4a80ff; font-size:1.4rem; width:32px; text-align:center; }
 textarea {
-  width: 100%;
-  height: 260px;
-  background: rgba(8, 12, 22, 0.7);
-  border: 1.5px solid rgba(74, 128, 255, 0.2);
-  border-radius: 24px;
-  color: #f0f5ff;
-  font-size: 16px;
-  font-family: 'Inter', monospace;
-  line-height: 1.6;
-  padding: 18px 20px;
-  resize: none;
-  transition: all 0.25s ease;
-  box-shadow: inset 0 5px 12px rgba(0, 0, 0, 0.6), 0 0 0 0 rgba(74, 128, 255, 0);
+  width:100%; height:260px; background:rgba(8,12,22,.7);
+  border:1.5px solid rgba(74,128,255,.2); border-radius:24px;
+  color:#f0f5ff; font-size:16px; font-family:'Inter',monospace;
+  line-height:1.6; padding:18px 20px; resize:none; transition:all .25s ease;
+  box-shadow:inset 0 5px 12px rgba(0,0,0,.6);
 }
-
-textarea:focus {
-  outline: none;
-  border-color: #4a80ff;
-  box-shadow: inset 0 5px 12px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(74, 128, 255, 0.2);
-}
-
-textarea::placeholder {
-  color: #5e7391;
-  font-style: italic;
-  font-weight: 400;
-}
-
+textarea:focus { outline:none; border-color:#4a80ff; box-shadow:inset 0 5px 12px rgba(0,0,0,.6),0 0 0 4px rgba(74,128,255,.2); }
+textarea::placeholder { color:#5e7391; font-style:italic; font-weight:400; }
 .char-counter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 14px;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
-  padding: 8px 16px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  color: #a0b8d4;
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:14px; margin-bottom:20px; font-size:.9rem; padding:8px 16px;
+  background:rgba(0,0,0,.25); border-radius:40px; border:1px solid rgba(255,255,255,.04); color:#a0b8d4;
 }
-
-.char-info i {
-  margin-right: 6px;
-  color: #4a80ff;
-}
-
-.char-limit {
-  font-weight: 600;
-  background: rgba(74, 128, 255, 0.15);
-  padding: 4px 12px;
-  border-radius: 30px;
-  color: #b8d0ff;
-}
-
-.char-limit.warning {
-  background: rgba(255, 200, 70, 0.2);
-  color: #ffd966;
-}
-
-.char-limit.error {
-  background: rgba(255, 80, 80, 0.2);
-  color: #ff9f9f;
-}
-
-.button-row {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.button-group {
-  display: flex;
-  gap: 12px;
-}
-
+.char-info i { margin-right:6px; color:#4a80ff; }
+.char-limit { font-weight:600; background:rgba(74,128,255,.15); padding:4px 12px; border-radius:30px; color:#b8d0ff; }
+.char-limit.warning { background:rgba(255,200,70,.2); color:#ffd966; }
+.char-limit.error   { background:rgba(255,80,80,.2);  color:#ff9f9f; }
+.button-row   { display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+.button-group { display:flex; gap:12px; }
 .quick-btn {
-  flex: 1;
-  padding: 18px 8px;
-  border: none;
-  border-radius: 26px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  transition: all 0.2s ease;
-  font-family: inherit;
-  background: rgba(30, 40, 60, 0.9);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: #eef4ff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  flex:1; padding:18px 8px; border:none; border-radius:26px;
+  font-size:1.1rem; font-weight:600; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  transition:all .2s ease; font-family:inherit;
+  background:rgba(30,40,60,.9); backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.06); color:#eef4ff; box-shadow:0 8px 20px rgba(0,0,0,.5);
 }
-
-.quick-btn:active {
-  transform: translateY(3px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-.quick-btn:disabled {
-  opacity: 0.35;
-  filter: grayscale(0.6);
-  transform: none;
-  pointer-events: none;
-}
-
-.btn-play {
-  background: linear-gradient(145deg, #1f3a6b, #142b50);
-  border-color: rgba(74, 128, 255, 0.4);
-  box-shadow: 0 8px 20px rgba(0, 80, 255, 0.2);
-}
-
-.btn-play i {
-  color: #6db3ff;
-}
-
-.btn-pause {
-  background: linear-gradient(145deg, #5f4b2c, #3f321e);
-  border-color: rgba(255, 200, 70, 0.3);
-}
-
-.btn-pause i {
-  color: #f5c542;
-}
-
-.btn-stop {
-  background: linear-gradient(145deg, #5f2c3a, #3f1e27);
-  border-color: rgba(255, 100, 100, 0.3);
-}
-
-.btn-stop i {
-  color: #ff7f7f;
-}
-
-.btn-clear {
-  background: linear-gradient(145deg, #2a3344, #1a212f);
-  border-color: rgba(160, 180, 220, 0.2);
-}
-
-.btn-clear i {
-  color: #9bb3d0;
-}
-
+.quick-btn:active { transform:translateY(3px); box-shadow:0 3px 10px rgba(0,0,0,.5); }
+.quick-btn:disabled { opacity:.35; filter:grayscale(.6); transform:none; pointer-events:none; }
+.btn-play  { background:linear-gradient(145deg,#1f3a6b,#142b50); border-color:rgba(74,128,255,.4); box-shadow:0 8px 20px rgba(0,80,255,.2); }
+.btn-play i { color:#6db3ff; }
+.btn-pause { background:linear-gradient(145deg,#5f4b2c,#3f321e); border-color:rgba(255,200,70,.3); }
+.btn-pause i { color:#f5c542; }
+.btn-stop  { background:linear-gradient(145deg,#5f2c3a,#3f1e27); border-color:rgba(255,100,100,.3); }
+.btn-stop i { color:#ff7f7f; }
+.btn-clear { background:linear-gradient(145deg,#2a3344,#1a212f); border-color:rgba(160,180,220,.2); }
+.btn-clear i { color:#9bb3d0; }
 .controls-panel {
-  background: rgba(8, 12, 22, 0.5);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 28px;
-  padding: 22px 20px;
-  margin-bottom: 20px;
+  background:rgba(8,12,22,.5); backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.04); border-radius:28px; padding:22px 20px; margin-bottom:20px;
 }
-
-.voice-selector, .speed-selector {
-  margin-bottom: 24px;
-}
-
-.voice-selector label, .speed-selector label {
-  display: block;
-  margin-bottom: 12px;
-  font-weight: 500;
-  color: #b8d0ff;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-}
-
-.voice-selector label i, .speed-selector label i {
-  margin-right: 10px;
-  color: #4a80ff;
-}
-
+.voice-selector,.speed-selector { margin-bottom:24px; }
+.voice-selector label,.speed-selector label { display:block; margin-bottom:12px; font-weight:500; color:#b8d0ff; font-size:.95rem; letter-spacing:.3px; }
+.voice-selector label i,.speed-selector label i { margin-right:10px; color:#4a80ff; }
 select {
-  width: 100%;
-  padding: 16px 20px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1.5px solid rgba(74, 128, 255, 0.2);
-  border-radius: 30px;
-  color: #f0f5ff;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a80ff'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 20px;
-  transition: all 0.2s;
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.6);
+  width:100%; padding:16px 20px; background:rgba(0,0,0,.4);
+  border:1.5px solid rgba(74,128,255,.2); border-radius:30px;
+  color:#f0f5ff; font-size:1rem; font-family:'Inter',sans-serif; appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a80ff'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat:no-repeat; background-position:right 18px center; background-size:20px;
+  transition:all .2s; box-shadow:inset 0 3px 8px rgba(0,0,0,.6);
 }
-
-select:focus {
-  outline: none;
-  border-color: #4a80ff;
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(74, 128, 255, 0.2);
-}
-
-.speed-options {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.speed-option {
-  flex: 1 0 auto;
-}
-
-.speed-option input {
-  display: none;
-}
-
+select:focus { outline:none; border-color:#4a80ff; box-shadow:inset 0 3px 8px rgba(0,0,0,.6),0 0 0 4px rgba(74,128,255,.2); }
+.speed-options { display:flex; gap:10px; flex-wrap:wrap; }
+.speed-option  { flex:1 0 auto; }
+.speed-option input { display:none; }
 .speed-option label {
-  display: block;
-  padding: 14px 8px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1.5px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-weight: 500;
-  text-align: center;
-  color: #b0c8e8;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display:block; padding:14px 8px; background:rgba(0,0,0,.3);
+  border:1.5px solid rgba(255,255,255,.06); border-radius:30px; cursor:pointer;
+  transition:all .2s; font-weight:500; text-align:center; color:#b0c8e8; font-size:.95rem; box-shadow:0 4px 8px rgba(0,0,0,.3);
 }
-
-.speed-option input:checked + label {
-  background: linear-gradient(145deg, #1e3c70, #112a50);
-  border-color: #4a80ff;
-  color: white;
-  box-shadow: 0 0 15px #3a70dd;
-}
-
+.speed-option input:checked+label { background:linear-gradient(145deg,#1e3c70,#112a50); border-color:#4a80ff; color:white; box-shadow:0 0 15px #3a70dd; }
 .status {
-  text-align: center;
-  padding: 16px 20px;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
-  border-radius: 40px;
-  font-size: 1rem;
-  font-weight: 500;
-  border-left: 4px solid #4a80ff;
-  color: #c0d4fc;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
-  transition: all 0.2s;
+  text-align:center; padding:16px 20px; background:rgba(0,0,0,.3); backdrop-filter:blur(4px);
+  border-radius:40px; font-size:1rem; font-weight:500; border-left:4px solid #4a80ff;
+  color:#c0d4fc; box-shadow:inset 0 1px 3px rgba(0,0,0,.3); transition:all .2s;
 }
-
-.status.active {
-  border-left-color: #ffd966;
-  background: rgba(74, 128, 255, 0.1);
-  box-shadow: 0 0 20px #4a80ff33;
-  color: white;
-}
-
-.status.paused {
-  border-left-color: #ffaa5e;
-  background: rgba(255, 200, 70, 0.08);
-}
-
+.status.active { border-left-color:#ffd966; background:rgba(74,128,255,.1); box-shadow:0 0 20px #4a80ff33; color:white; }
+.status.paused { border-left-color:#ffaa5e; background:rgba(255,200,70,.08); }
 .instructions {
-  font-size: 0.85rem;
-  margin-top: 24px;
-  text-align: center;
-  line-height: 1.7;
-  padding: 16px 14px;
-  color: #8fa3c2;
-  background: rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(4px);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  font-size:.85rem; margin-top:24px; text-align:center; line-height:1.7;
+  padding:16px 14px; color:#8fa3c2; background:rgba(0,0,0,.15);
+  backdrop-filter:blur(4px); border-radius:30px; border:1px solid rgba(255,255,255,.02);
 }
-
-.instructions p {
-  margin-bottom: 6px;
-}
-
-.instructions strong {
-  color: #aac8ff;
-  font-weight: 600;
-}
-
-@media (max-width: 480px) {
-  h1 { font-size: 2rem; }
-  .card { padding: 22px 16px; }
-  .quick-btn { font-size: 1rem; gap: 8px; }
-  .speed-option label { font-size: 0.85rem; padding: 12px 4px; }
+.instructions p { margin-bottom:6px; }
+.instructions strong { color:#aac8ff; font-weight:600; }
+@media (max-width:480px) {
+  h1 { font-size:2rem; }
+  .card { padding:22px 16px; }
+  .quick-btn { font-size:1rem; gap:8px; }
+  .speed-option label { font-size:.85rem; padding:12px 4px; }
 }
 </style>
 </head>
@@ -429,28 +142,26 @@ select:focus {
 <header>
   <h1><i class="fas fa-head-side-virus"></i> AudioFiel</h1>
   <div class="subtitle">Tu lector de texto de confianza</div>
-  <div class="brand-line"><i class="fas fa-check-circle"></i> Ignora símbolos Markdown · Siempre fiel</div>
+  <div class="brand-line"><i class="fas fa-check-circle"></i> Ignora símbolos Markdown · Funciona en segundo plano</div>
 </header>
 <main>
 <div class="card">
   <h2><i class="fas fa-pen-fancy"></i> Texto a narrar</h2>
-  <textarea id="textInput" placeholder="Pega aquí el texto que deseas escuchar... (máx 8.000 caracteres)&#10;&#10;Nota: El lector IGNORA automáticamente los símbolos # * _ - > y bloques #*...*# / ##**...**##"></textarea>
+  <textarea id="textInput" placeholder="Pega aquí el texto que deseas escuchar... (máx 8.000 caracteres)&#10;&#10;El lector IGNORA automáticamente: # * _ - > ~ y bloques #*...*# / ##**...**##"></textarea>
   <div class="char-counter">
     <div class="char-info"><i class="fas fa-solid fa-layer-group"></i> Contenido cargado</div>
     <div class="char-limit" id="charLimit">0 / 8.000</div>
   </div>
-  
   <div class="button-row">
     <div class="button-group">
-      <button id="playBtn" class="quick-btn btn-play"><i class="fas fa-play"></i> PLAY</button>
+      <button id="playBtn"  class="quick-btn btn-play"><i class="fas fa-play"></i> PLAY</button>
       <button id="pauseBtn" class="quick-btn btn-pause" disabled><i class="fas fa-pause"></i> PAUSA</button>
     </div>
     <div class="button-group">
-      <button id="stopBtn" class="quick-btn btn-stop" disabled><i class="fas fa-stop"></i> STOP</button>
+      <button id="stopBtn"  class="quick-btn btn-stop"  disabled><i class="fas fa-stop"></i> STOP</button>
       <button id="clearBtn" class="quick-btn btn-clear"><i class="fas fa-eraser"></i> BORRAR</button>
     </div>
   </div>
-  
   <div class="controls-panel">
     <h2><i class="fas fa-sliders-h"></i> Configuración de voz</h2>
     <div class="voice-selector">
@@ -460,20 +171,18 @@ select:focus {
     <div class="speed-selector">
       <label><i class="fas fa-tachometer-alt"></i> Velocidad de narración</label>
       <div class="speed-options">
-        <div class="speed-option"><input type="radio" id="speed-slow" name="speed" value="0.7"><label for="speed-slow">Lento</label></div>
+        <div class="speed-option"><input type="radio" id="speed-slow"   name="speed" value="0.7"><label for="speed-slow">Lento</label></div>
         <div class="speed-option"><input type="radio" id="speed-normal" name="speed" value="1" checked><label for="speed-normal">Normal</label></div>
-        <div class="speed-option"><input type="radio" id="speed-fast" name="speed" value="1.5"><label for="speed-fast">Rápido</label></div>
+        <div class="speed-option"><input type="radio" id="speed-fast"   name="speed" value="1.5"><label for="speed-fast">Rápido</label></div>
       </div>
     </div>
   </div>
-  
   <div class="status" id="status">🎧 Sistema listo · Ignora símbolos y marcas</div>
 </div>
-
 <div class="instructions">
   <p><i class="fas fa-shield-alt"></i> <strong>AudioFiel</strong> no almacena datos personales. Todo el procesamiento ocurre en tu dispositivo.</p>
   <p><i class="fas fa-eye-slash"></i> <strong>Ignora automáticamente</strong> bloques <strong>#*...*#</strong> / <strong>##**...**##</strong> y símbolos sueltos de Markdown (<strong># * _ - &gt; ~</strong>).</p>
-  <p><i class="fas fa-lock"></i> <strong>Pantalla bloqueada:</strong> Abre desde Safari → Compartir → "Añadir a pantalla de inicio". La voz seguirá sonando.</p>
+  <p><i class="fas fa-mobile-alt"></i> <strong>iPhone/iPad:</strong> Safari → Compartir → "Añadir a pantalla de inicio" → abre desde ese ícono → PLAY → bloquea pantalla. La voz continúa.</p>
   <p><i class="fas fa-gavel"></i> Este software se proporciona "tal cual", sin garantías. El usuario asume toda responsabilidad.</p>
 </div>
 </main>
@@ -481,404 +190,323 @@ select:focus {
 
 <script>
 (function () {
+'use strict';
 
-    // ========== ELEMENTOS DEL DOM ==========
-    const t   = document.getElementById('textInput');
-    const v   = document.getElementById('voiceSelect');
-    const pb  = document.getElementById('playBtn');
-    const pab = document.getElementById('pauseBtn');
-    const sb  = document.getElementById('stopBtn');
-    const cb  = document.getElementById('clearBtn');
-    const st  = document.getElementById('status');
-    const cl  = document.getElementById('charLimit');
-    const MAX  = 8000;
-    const WARN = 7000;
+// ─── DOM ───────────────────────────────────────────────────────────────────
+const txtEl    = document.getElementById('textInput');
+const selEl    = document.getElementById('voiceSelect');
+const playBtn  = document.getElementById('playBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const stopBtn  = document.getElementById('stopBtn');
+const clearBtn = document.getElementById('clearBtn');
+const statusEl = document.getElementById('status');
+const charEl   = document.getElementById('charLimit');
+const MAX = 8000, WARN = 7000;
+const ss  = window.speechSynthesis;
 
-    // ========== VARIABLES DE ESTADO ==========
-    let spk = false;   // speaking
-    let pau = false;   // paused
-    let ss  = window.speechSynthesis;
-    let currentUtterance = null;
+// ─── ESTADO ────────────────────────────────────────────────────────────────
+let isSpeaking = false;
+let isPaused   = false;
+let wakeLock   = null;
 
-    // ========== AUDIO FANTASMA (SILENCIOSO REAL) PARA PANTALLA BLOQUEADA ==========
-    // WAV de 1 segundo de silencio codificado en base64 — formato válido garantizado.
-    // Esto mantiene el contexto de audio activo en iOS/Android cuando la pantalla se bloquea.
-    const SILENT_WAV =
-        'data:audio/wav;base64,' +
-        'UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
+// ─── AUDIO CONTEXT ─────────────────────────────────────────────────────────
+// Técnica correcta para mantener la sesión de audio viva en iOS/Android:
+// Un OscillatorNode a 0 Hz (inaudible) conectado a un GainNode a 0.0001
+// impide que el motor de audio suspenda el contexto cuando la pantalla se
+// bloquea o la app pasa a segundo plano.
+// El contexto se crea UNA SOLA VEZ dentro del gesto del usuario (clic PLAY).
+let audioCtx = null;
+let oscNode  = null;
+let gainNode = null;
 
-    let ghostAudio = null;
-    let wakeLock   = null;
+function iniciarAudioCtx() {
+    if (audioCtx) { reanudarAudioCtx(); return; }
+    try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        gainNode = audioCtx.createGain();
+        gainNode.gain.value = 0.0001;
+        oscNode = audioCtx.createOscillator();
+        oscNode.frequency.value = 0;
+        oscNode.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        oscNode.start();
+    } catch (e) { console.warn('AudioFiel AudioContext:', e); }
+}
 
-    function crearGhostAudio() {
-        // Crea un elemento <audio> silencioso en bucle para mantener vivo el
-        // contexto de audio del navegador mientras la pantalla está bloqueada.
-        const a = new Audio(SILENT_WAV);
-        a.loop   = true;
-        a.volume = 0.001;   // Prácticamente silencioso pero no 0 (algunos navegadores
-                             // optimizan/detienen volumen exactamente 0)
-        return a;
+function reanudarAudioCtx() {
+    if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
     }
+}
 
-    function mantenerActivoMientrasNarra(iniciar) {
-        if (iniciar) {
-            // --- Audio fantasma ---
-            if (!ghostAudio) {
-                ghostAudio = crearGhostAudio();
-            }
-            ghostAudio.play().catch(e => console.warn('AudioFiel ghost audio:', e));
+function detenerAudioCtx() {
+    if (oscNode)  { try { oscNode.stop(); } catch(_){} oscNode.disconnect();  oscNode  = null; }
+    if (gainNode) { gainNode.disconnect(); gainNode = null; }
+    if (audioCtx) { audioCtx.close().catch(()=>{}); audioCtx = null; }
+}
 
-            // --- WakeLock (evita apagado de pantalla automático) ---
-            if ('wakeLock' in navigator && !wakeLock) {
-                navigator.wakeLock.request('screen')
-                    .then(lock => { wakeLock = lock; })
-                    .catch(() => {});
-            }
-        } else {
-            // --- Detener audio fantasma ---
-            if (ghostAudio) {
-                ghostAudio.pause();
-                ghostAudio.currentTime = 0;
-                ghostAudio = null;
-            }
-            // --- Liberar WakeLock ---
-            if (wakeLock) {
-                wakeLock.release().catch(() => {});
-                wakeLock = null;
-            }
-        }
-    }
+// ─── WAKE LOCK ─────────────────────────────────────────────────────────────
+async function pedirWakeLock() {
+    if (!('wakeLock' in navigator) || wakeLock) return;
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release', () => { wakeLock = null; });
+    } catch(_) {}
+}
+function liberarWakeLock() {
+    if (wakeLock) { wakeLock.release().catch(()=>{}); wakeLock = null; }
+}
 
-    // ========== RECUPERAR SÍNTESIS SI EL NAVEGADOR LA SUSPENDE ==========
-    // iOS/Android puede suspender speechSynthesis cuando la app pasa a segundo
-    // plano. Al volver al primer plano, reanudamos si estaba activo.
-    document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && spk && !pau) {
-            // Algunos navegadores pausan la síntesis al ocultar la pestaña
-            if (ss.paused) {
-                ss.resume();
-            }
-        }
-    });
-
-    // ========== LIMPIEZA DE MARCAS Y SÍMBOLOS ==========
-    function limpiarTexto(texto) {
-        let s = texto;
-
-        // 1. Eliminar bloques ##** ... **## (formato extendido)
-        s = s.replace(/##\*\*[\s\S]*?\*\*##/g, ' ');
-
-        // 2. Eliminar bloques #* ... *# (formato original)
-        s = s.replace(/#\*[\s\S]*?\*#/g, ' ');
-
-        // 3. Eliminar marcadores sueltos sin cierre
-        s = s.replace(/##\*\*/g, '');
-        s = s.replace(/\*\*##/g, '');
-        s = s.replace(/#\*/g,    '');
-        s = s.replace(/\*#/g,    '');
-
-        // 4. ── NUEVO: Ignorar símbolos de Markdown ──────────────────────────
-        // Encabezados: # ## ### etc. al inicio de línea
-        s = s.replace(/^#{1,6}\s*/gm, '');
-
-        // Negrita/cursiva: **texto** → texto, *texto* → texto, __texto__ → texto, _texto_ → texto
-        s = s.replace(/\*\*([^*]+)\*\*/g, '$1');
-        s = s.replace(/__([^_]+)__/g,     '$1');
-        s = s.replace(/\*([^*]+)\*/g,     '$1');
-        s = s.replace(/_([^_]+)_/g,       '$1');
-
-        // Tachado: ~~texto~~ → texto
-        s = s.replace(/~~([^~]+)~~/g, '$1');
-
-        // Código inline: `texto` → texto
-        s = s.replace(/`([^`]+)`/g, '$1');
-
-        // Bloques de código: ```...``` → (vacío)
-        s = s.replace(/```[\s\S]*?```/g, '');
-
-        // Citas: > al inicio de línea
-        s = s.replace(/^>\s*/gm, '');
-
-        // Listas: - item, * item, + item, 1. item al inicio de línea
-        s = s.replace(/^[\s]*[-*+]\s+/gm, '');
-        s = s.replace(/^[\s]*\d+\.\s+/gm, '');
-
-        // Separadores horizontales: --- o *** o ___
-        s = s.replace(/^[-*_]{3,}\s*$/gm, '');
-
-        // Asteriscos, almohadillas y guiones que queden sueltos (no dentro de palabras)
-        s = s.replace(/(?<!\w)[*#_~](?!\w)/g, '');
-
-        // 5. Limpiar espacios múltiples y líneas vacías extra
-        s = s.replace(/\n{3,}/g, '\n\n');
-        s = s.replace(/[ \t]+/g, ' ');
-        s = s.trim();
-
-        return s;
-    }
-
-    function obtenerTextoParaNarrar() {
-        const original = t.value;
-        const limpio   = limpiarTexto(original);
-        const eliminados = original.length - limpio.length;
-        if (eliminados > 0) {
-            console.log(`🗑️ AudioFiel eliminó ${eliminados} caracteres (marcas/símbolos)`);
-        }
-        return limpio;
-    }
-
-    // ========== GESTIÓN DE VOCES (CON FALLBACK) ==========
-    const pv = [
-        { k: ['paulina', 'premium', 'enhanced'], n: 'Paulina Premium', l: 'es-MX' },
-        { k: ['mónica', 'monica', 'premium'],    n: 'Mónica Premium',  l: 'es-ES' },
-        { k: ['paulina'],                        n: 'Paulina',         l: 'es-MX' },
-        { k: ['mónica', 'monica'],               n: 'Mónica',          l: 'es-ES' }
-    ];
-
-    function loadV() {
-        const sv = ss.getVoices();
-        v.innerHTML = '';
-        let fv = [];
-
-        pv.forEach(p => {
-            const m = sv.filter(s =>
-                p.k.some(k => s.name.toLowerCase().includes(k)) &&
-                (p.l ? s.lang.toLowerCase().includes(p.l.toLowerCase().split('-')[0]) : true)
-            );
-            if (m.length > 0) {
-                m.forEach((vo, i) => {
-                    const pr = vo.name.toLowerCase().includes('premium') ||
-                               vo.name.toLowerCase().includes('enhanced');
-                    fv.push({
-                        voice:       vo,
-                        displayName: m.length > 1 ? `${p.n} ${i + 1}` : p.n,
-                        priority:    pr ? 1 : 2
-                    });
-                });
-            }
-        });
-
-        fv.sort((a, b) => a.priority - b.priority);
-
-        if (!fv.length) {
-            const es = sv.filter(s => s.lang.startsWith('es'));
-            es.forEach(vo => fv.push({ voice: vo, displayName: `${vo.name} (${vo.lang})`, priority: 3 }));
-        }
-
-        if (!fv.length) {
-            v.innerHTML = '<option>Sin voces disponibles</option>';
-            upSt('⚠️ No hay voces en el sistema');
-            return;
-        }
-
-        fv.forEach((it, i) => {
-            const o = document.createElement('option');
-            o.value = i;
-            o.textContent = it.displayName;
-            o.dataset.voiceIndex = sv.indexOf(it.voice);
-            if (i === 0) o.selected = true;
-            v.appendChild(o);
-        });
-
-        upSt(`✅ ${fv.length} voces disponibles · Ignora símbolos Markdown`);
-    }
-
-    if (ss.onvoiceschanged !== undefined) {
-        ss.onvoiceschanged = loadV;
-    }
-    setTimeout(loadV, 500);
-
-    // ========== CONTADOR DE CARACTERES ==========
-    function upCh() {
-        const c = t.value.length;
-        cl.textContent = `${c.toLocaleString()} / 8.000`;
-        cl.classList.remove('warning', 'error');
-        if (c > MAX) {
-            cl.classList.add('error');
-            t.value = t.value.substring(0, MAX);
-            upCh();
-            upSt('⚠️ Texto recortado a 8.000');
-            return;
-        } else if (c > WARN) {
-            cl.classList.add('warning');
-        }
-        upBtn();
-    }
-    t.addEventListener('input', upCh);
-
-    // ========== PLAY ==========
-    function play() {
-        if (ss.speaking) ss.cancel();
-
-        const txtOriginal = t.value.trim();
-        if (!txtOriginal) {
-            upSt('📝 Pega contenido primero');
-            t.focus();
-            return;
-        }
-        if (txtOriginal.length > MAX) {
-            upSt('❌ Texto muy largo');
-            return;
-        }
-
-        const textoParaNarrar = obtenerTextoParaNarrar();
-        if (!textoParaNarrar) {
-            upSt('⚠️ El texto solo contiene marcas (nada que narrar)');
-            return;
-        }
-
-        const u = new SpeechSynthesisUtterance(textoParaNarrar);
-        currentUtterance = u;
-
-        const so = v.options[v.selectedIndex];
-        if (so && so.dataset.voiceIndex) {
-            const vs = ss.getVoices();
-            const vi = parseInt(so.dataset.voiceIndex);
-            if (vs[vi]) u.voice = vs[vi];
-        }
-
-        const sp = document.querySelector('input[name="speed"]:checked');
-        u.rate   = sp ? parseFloat(sp.value) : 1;
-        u.pitch  = 1;
-        u.volume = 1;
-
-        u.onstart = () => {
-            spk = true;
-            pau = false;
-            mantenerActivoMientrasNarra(true);
-            upBtn();
-            upSt('🎙️ Narrando...');
-            st.classList.add('active');
-            st.classList.remove('paused');
-        };
-
-        u.onend = () => {
-            mantenerActivoMientrasNarra(false);
-            spk = false;
-            pau = false;
-            upBtn();
-            upSt('✅ Completado');
-            st.classList.remove('active', 'paused');
-            currentUtterance = null;
-        };
-
-        u.onerror = (e) => {
-            // 'interrupted' ocurre cuando el usuario pulsa Stop — no es un error real
-            if (e.error === 'interrupted') return;
-            mantenerActivoMientrasNarra(false);
-            spk = false;
-            pau = false;
-            upBtn();
-            upSt('❌ Error de síntesis');
-            st.classList.remove('active', 'paused');
-            currentUtterance = null;
-        };
-
-        u.onpause = () => {
-            pau = true;
-            upBtn();
-            st.classList.remove('active');
-            st.classList.add('paused');
-        };
-
-        u.onresume = () => {
-            pau = false;
-            upBtn();
-            st.classList.add('active');
-            st.classList.remove('paused');
-        };
-
-        ss.speak(u);
-    }
-
-    function pause() {
-        if (ss.speaking && !pau) {
-            ss.pause();
-            pau = true;
-            upBtn();
-            upSt('⏸️ Pausado');
-            st.classList.remove('active');
-            st.classList.add('paused');
-        }
-    }
-
-    function resume() {
-        if (ss.speaking && pau) {
+// ─── RECUPERACIÓN EN SEGUNDO PLANO ─────────────────────────────────────────
+// En iOS Safari la síntesis puede cancelarse silenciosamente al bloquear la
+// pantalla o cambiar de app, sin disparar onend/onerror.
+// Cuando la app vuelve al primer plano:
+//   1. Reactivamos el AudioContext (iOS lo suspende).
+//   2. Si el estado dice "hablando" pero speechSynthesis ya no está activo,
+//      significa que iOS canceló la síntesis → la relanzamos automáticamente.
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) return;
+    reanudarAudioCtx();
+    if (isSpeaking && !isPaused) pedirWakeLock();
+    if (isSpeaking && !isPaused) {
+        if (!ss.speaking && !ss.pending) {
+            // iOS canceló la síntesis en segundo plano → relanzar
+            isSpeaking = false;
+            isPaused   = false;
+            setTimeout(() => { if (!isSpeaking) play(); }, 350);
+        } else if (ss.paused) {
             ss.resume();
-            pau = false;
-            upBtn();
-            upSt('▶️ Reanudando...');
-            st.classList.add('active');
-            st.classList.remove('paused');
         }
     }
+});
 
-    function stop() {
-        if (ss.speaking || ss.pending) {
-            mantenerActivoMientrasNarra(false);
-            ss.cancel();
-            spk = false;
-            pau = false;
-            upBtn();
-            upSt('⏹️ Detenido');
-            st.classList.remove('active', 'paused');
-            currentUtterance = null;
-        }
-    }
+// ─── LIMPIEZA DE TEXTO ─────────────────────────────────────────────────────
+function limpiarTexto(texto) {
+    let s = texto;
+    // Bloques especiales con contenido
+    s = s.replace(/##\*\*[\s\S]*?\*\*##/g, ' ');
+    s = s.replace(/#\*[\s\S]*?\*#/g, ' ');
+    // Marcadores sueltos
+    s = s.replace(/##\*\*/g,'').replace(/\*\*##/g,'');
+    s = s.replace(/#\*/g,'').replace(/\*#/g,'');
+    // Bloques de código (antes que inline)
+    s = s.replace(/```[\s\S]*?```/g, '');
+    // Encabezados
+    s = s.replace(/^#{1,6}\s*/gm, '');
+    // Negrita/cursiva → desenvuelve texto
+    s = s.replace(/\*\*\*([^*]+)\*\*\*/g,'$1');
+    s = s.replace(/\*\*([^*]+)\*\*/g,'$1');
+    s = s.replace(/__([^_]+)__/g,'$1');
+    s = s.replace(/\*([^*\n]+)\*/g,'$1');
+    s = s.replace(/_([^_\n]+)_/g,'$1');
+    // Tachado
+    s = s.replace(/~~([^~]+)~~/g,'$1');
+    // Código inline
+    s = s.replace(/`([^`]+)`/g,'$1');
+    // Citas
+    s = s.replace(/^>\s*/gm,'');
+    // Listas
+    s = s.replace(/^[\s]*[-*+]\s+/gm,'');
+    s = s.replace(/^[\s]*\d+[.)]\s+/gm,'');
+    // Separadores
+    s = s.replace(/^[-*_]{3,}\s*$/gm,'');
+    // Símbolos sueltos
+    s = s.replace(/(?<!\w)[*#_~](?!\w)/g,'');
+    // Espacios y saltos sobrantes
+    s = s.replace(/\n{3,}/g,'\n\n').replace(/[ \t]+/g,' ');
+    return s.trim();
+}
 
-    function clear() {
-        if (ss.speaking || ss.pending) stop();
-        t.value = '';
-        upCh();
-        upSt('🗑️ Borrado · Listo');
-        t.focus();
-    }
+function textoParaNarrar() {
+    const orig   = txtEl.value;
+    const limpio = limpiarTexto(orig);
+    const diff   = orig.length - limpio.length;
+    if (diff > 0) console.log(`AudioFiel: ${diff} chars de marcas omitidos`);
+    return limpio;
+}
 
-    function upBtn() {
-        const ht = t.value.trim().length > 0;
-        const wl = t.value.length <= MAX;
+// ─── VOCES ─────────────────────────────────────────────────────────────────
+const VOCES_PREF = [
+    {k:['paulina','premium','enhanced'], n:'Paulina Premium', l:'es-MX'},
+    {k:['mónica','monica','premium'],    n:'Mónica Premium',  l:'es-ES'},
+    {k:['paulina'],                      n:'Paulina',         l:'es-MX'},
+    {k:['mónica','monica'],              n:'Mónica',          l:'es-ES'}
+];
 
-        pb.disabled  = !ht || !wl || spk;
-        pab.disabled = !spk;
-        sb.disabled  = !spk && !pau;
-
-        if (pau) {
-            pab.innerHTML = '<i class="fas fa-play"></i> REANUDAR';
-            pab.classList.remove('btn-pause');
-            pab.classList.add('btn-play');
-        } else {
-            pab.innerHTML = '<i class="fas fa-pause"></i> PAUSA';
-            pab.classList.remove('btn-play');
-            pab.classList.add('btn-pause');
-        }
-    }
-
-    function upSt(m) {
-        st.textContent = m;
-    }
-
-    // ========== EVENTOS ==========
-    pb.addEventListener('click', play);
-    pab.addEventListener('click', () => {
-        if (spk) {
-            if (pau) resume();
-            else pause();
-        }
+function cargarVoces() {
+    const todas = ss.getVoices();
+    selEl.innerHTML = '';
+    let lista = [];
+    VOCES_PREF.forEach(p => {
+        const hits = todas.filter(s =>
+            p.k.some(k => s.name.toLowerCase().includes(k)) &&
+            (p.l ? s.lang.toLowerCase().startsWith(p.l.split('-')[0].toLowerCase()) : true)
+        );
+        hits.forEach((vo,i) => lista.push({
+            voice: vo,
+            displayName: hits.length > 1 ? `${p.n} ${i+1}` : p.n,
+            priority: /premium|enhanced/i.test(vo.name) ? 1 : 2
+        }));
     });
-    sb.addEventListener('click', stop);
-    cb.addEventListener('click', clear);
-
-    document.addEventListener('keydown', e => {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-            e.preventDefault();
-            if (!pb.disabled) play();
-        }
+    lista.sort((a,b) => a.priority - b.priority);
+    if (!lista.length) {
+        todas.filter(s => s.lang.startsWith('es'))
+             .forEach(vo => lista.push({voice:vo, displayName:`${vo.name} (${vo.lang})`, priority:3}));
+    }
+    if (!lista.length) {
+        selEl.innerHTML = '<option>Sin voces disponibles</option>';
+        setStatus('⚠️ No hay voces en el sistema'); return;
+    }
+    lista.forEach((it,i) => {
+        const o = document.createElement('option');
+        o.value = i; o.textContent = it.displayName;
+        o.dataset.voiceIndex = todas.indexOf(it.voice);
+        if (i === 0) o.selected = true;
+        selEl.appendChild(o);
     });
+    setStatus(`✅ ${lista.length} voces disponibles · Listo`);
+}
+if (ss.onvoiceschanged !== undefined) ss.onvoiceschanged = cargarVoces;
+setTimeout(cargarVoces, 500);
 
-    // ========== INICIALIZACIÓN ==========
-    upCh();
-    upBtn();
-    upSt('🎧 Sistema listo · Ignora símbolos y marcas');
+// ─── CONTADOR ──────────────────────────────────────────────────────────────
+function actualizarContador() {
+    const c = txtEl.value.length;
+    charEl.textContent = `${c.toLocaleString()} / 8.000`;
+    charEl.classList.remove('warning','error');
+    if (c > MAX) {
+        charEl.classList.add('error');
+        txtEl.value = txtEl.value.substring(0, MAX);
+        actualizarContador();
+        setStatus('⚠️ Texto recortado a 8.000'); return;
+    }
+    if (c > WARN) charEl.classList.add('warning');
+    actualizarBotones();
+}
+txtEl.addEventListener('input', actualizarContador);
+
+// ─── PLAY ──────────────────────────────────────────────────────────────────
+function play() {
+    if (ss.speaking || ss.pending) ss.cancel();
+    const original = txtEl.value.trim();
+    if (!original)           { setStatus('📝 Pega contenido primero'); txtEl.focus(); return; }
+    if (original.length > MAX) { setStatus('❌ Texto muy largo'); return; }
+    const texto = textoParaNarrar();
+    if (!texto) { setStatus('⚠️ Nada que narrar (solo marcas)'); return; }
+
+    // Crear AudioContext dentro del gesto del usuario (requerido por iOS)
+    iniciarAudioCtx();
+    pedirWakeLock();
+
+    const u = new SpeechSynthesisUtterance(texto);
+
+    const opcion = selEl.options[selEl.selectedIndex];
+    if (opcion && opcion.dataset.voiceIndex) {
+        const todas = ss.getVoices();
+        const idx   = parseInt(opcion.dataset.voiceIndex);
+        if (todas[idx]) u.voice = todas[idx];
+    }
+    const spEl = document.querySelector('input[name="speed"]:checked');
+    u.rate = spEl ? parseFloat(spEl.value) : 1;
+    u.pitch = 1; u.volume = 1;
+
+    u.onstart = () => {
+        isSpeaking = true; isPaused = false;
+        actualizarBotones();
+        setStatus('🎙️ Narrando...');
+        statusEl.classList.add('active');
+        statusEl.classList.remove('paused');
+        reanudarAudioCtx();
+    };
+    u.onend = () => {
+        isSpeaking = false; isPaused = false;
+        detenerAudioCtx(); liberarWakeLock();
+        actualizarBotones();
+        setStatus('✅ Completado');
+        statusEl.classList.remove('active','paused');
+    };
+    u.onerror = (e) => {
+        if (e.error === 'interrupted' || e.error === 'canceled') return;
+        isSpeaking = false; isPaused = false;
+        detenerAudioCtx(); liberarWakeLock();
+        actualizarBotones();
+        setStatus('❌ Error · Pulsa PLAY para reintentar');
+        statusEl.classList.remove('active','paused');
+    };
+    u.onpause = () => {
+        isPaused = true; actualizarBotones();
+        statusEl.classList.remove('active'); statusEl.classList.add('paused');
+    };
+    u.onresume = () => {
+        isPaused = false; actualizarBotones();
+        statusEl.classList.add('active'); statusEl.classList.remove('paused');
+        reanudarAudioCtx();
+    };
+
+    ss.speak(u);
+}
+
+// ─── PAUSA / REANUDAR / STOP / BORRAR ──────────────────────────────────────
+function pausar() {
+    if (ss.speaking && !isPaused) {
+        ss.pause(); isPaused = true; actualizarBotones();
+        setStatus('⏸️ Pausado');
+        statusEl.classList.remove('active'); statusEl.classList.add('paused');
+    }
+}
+function reanudar() {
+    if (ss.speaking && isPaused) {
+        reanudarAudioCtx(); ss.resume();
+        isPaused = false; actualizarBotones();
+        setStatus('▶️ Reanudando...');
+        statusEl.classList.add('active'); statusEl.classList.remove('paused');
+    }
+}
+function stop() {
+    if (ss.speaking || ss.pending) ss.cancel();
+    isSpeaking = false; isPaused = false;
+    detenerAudioCtx(); liberarWakeLock();
+    actualizarBotones();
+    setStatus('⏹️ Detenido');
+    statusEl.classList.remove('active','paused');
+}
+function borrar() {
+    stop(); txtEl.value = '';
+    actualizarContador();
+    setStatus('🗑️ Borrado · Listo');
+    txtEl.focus();
+}
+
+// ─── UI ────────────────────────────────────────────────────────────────────
+function actualizarBotones() {
+    const hayTexto  = txtEl.value.trim().length > 0;
+    const dentroMax = txtEl.value.length <= MAX;
+    playBtn.disabled  = !hayTexto || !dentroMax || isSpeaking;
+    pauseBtn.disabled = !isSpeaking;
+    stopBtn.disabled  = !isSpeaking && !isPaused;
+    if (isPaused) {
+        pauseBtn.innerHTML = '<i class="fas fa-play"></i> REANUDAR';
+        pauseBtn.classList.replace('btn-pause','btn-play');
+    } else {
+        pauseBtn.innerHTML = '<i class="fas fa-pause"></i> PAUSA';
+        pauseBtn.classList.replace('btn-play','btn-pause');
+    }
+}
+function setStatus(m) { statusEl.textContent = m; }
+
+// ─── EVENTOS ───────────────────────────────────────────────────────────────
+playBtn.addEventListener('click',  play);
+pauseBtn.addEventListener('click', () => { if (isSpeaking) { isPaused ? reanudar() : pausar(); } });
+stopBtn.addEventListener('click',  stop);
+clearBtn.addEventListener('click', borrar);
+document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); if (!playBtn.disabled) play(); }
+});
+
+// ─── INIT ──────────────────────────────────────────────────────────────────
+actualizarContador();
+actualizarBotones();
+setStatus('🎧 Sistema listo · Ignora símbolos y marcas');
 
 })();
 </script>
